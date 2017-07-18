@@ -21,7 +21,9 @@ public class MongoDB06 extends MongoConnection {
 		MongoDatabase database = mongoClient.getDatabase("books");
 		MongoCollection<Document> collection = database.getCollection("books");
 
-		//wyszukujemy
+		//wyszukujemy a wczesniejza pomoca Projekcji okreslamy, ktore pola maja byc wyswietlone, a ktore nie
+		//Projections - to fabryka, ktora sluzy do tworz4enia innych obiektow
+		//Filters i <cos tam> to tez fabryki
 		Bson myInclude = Projections.include("title");
 		Bson myExclude = Projections.excludeId();
 		collection.find().projection(Projections.fields(myInclude,myExclude))
