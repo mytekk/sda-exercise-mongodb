@@ -41,6 +41,8 @@ public class MongoDB11 extends MongoConnection {
         System.out.println("Po zmianie:");
         collection.find().forEach((Block<Document>) document1 -> System.out.println(document1.toJson()) );
 
+        mongoClient.close();
+
 	}
 
 }

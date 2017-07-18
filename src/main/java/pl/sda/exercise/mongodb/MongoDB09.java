@@ -28,6 +28,7 @@ public class MongoDB09 extends MongoConnection {
 		System.out.println("Kolekcje po usunieciem");
 		database.listCollections().forEach((Block<Document>) document -> System.out.println(document.toJson()));
 
+		mongoClient.close();
 	}
 
 }
